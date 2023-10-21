@@ -37,9 +37,9 @@ jobs:
           # You may pin to the exact commit or the version.
           # uses: heinrichcoetzee/back4app-deploy-action@cfc55c9caf12ecac112e559c3ff7252eb1c69304
             uses: heinrichcoetzee/back4app-deploy-action@v4
-              with:
-                # project name of b4app deploy
-                project: "appnodedeploy"
-                # AccountKey of B4App account
-                accountKey: ${{secrets.BACK4APP_API_KEY}}
+            with:
+              # project name of b4app deploy
+              project: "appnodedeploy"
+              # AccountKey of B4App account
+              accountKey: ${{secrets.BACK4APP_API_KEY}}
     
