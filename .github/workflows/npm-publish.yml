@@ -35,6 +35,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: heinrichcoetzee/back4app-deploy-action@v4
         with:
-          - name: back4app Deploy Action
-            project: "appnodedeploy"
+          project: "appnodedeploy"
+<<<<<<< HEAD
+          repo-token: ${{secrets.BACK4APP_API_KEY}}
+=======
           accountKey: ${{secrets.BACK4APP_API_KEY}}
+
+>>>>>>> b207934fed9b8af83cde17b03bd53703e512389d
