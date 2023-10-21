@@ -9,25 +9,23 @@ on:
 
 jobs:
   build:
-
-
     runs-on: ubuntu-latest
 
-    
-  steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with: 
-        node-version: “16.x”
-    - name: Install dependencies
-      run: npm install
-    - name: Run test
-      run: npm test
-    - name: Check Job Status status and fail if they are red
-      if: env.WORKFLOW_CONCLUSION == 'failure'
-      run: exit 1
-
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with: 
+          node-version: “16.x”
+      - name: Install dependencies
+        run: npm install
+      - name: Run test
+        run: npm test
+      - name: Check Job Status status and fail if they are red
+        if: env.WORKFLOW_CONCLUSION == 'failure'
+        run: exit 1
+        
+        
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -36,9 +34,4 @@ jobs:
       - uses: heinrichcoetzee/back4app-deploy-action@v4
         with:
           project: "appnodedeploy"
-<<<<<<< HEAD
-          repo-token: ${{secrets.BACK4APP_API_KEY}}
-=======
           accountKey: ${{secrets.BACK4APP_API_KEY}}
-
->>>>>>> b207934fed9b8af83cde17b03bd53703e512389d
